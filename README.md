@@ -25,7 +25,7 @@ npm install
 ### 4. Environment Configuration
 ```bash
 API_KEY=your_api_key_here
-PORT=3000
+PORT=5000
 ```
 
 ### 5. Run the Project
