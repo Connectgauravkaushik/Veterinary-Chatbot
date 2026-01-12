@@ -4,7 +4,7 @@
 
   function createIframe() {
     const iframe = document.createElement("iframe");
-    iframe.src = "https://cheerful-snickerdoodle-caafdf.netlify.app/";
+    iframe.src = "https://veterinary-chatbot.netlify.app/";
     iframe.id = "vetbot-iframe";
 
     iframe.style.position = "fixed";
