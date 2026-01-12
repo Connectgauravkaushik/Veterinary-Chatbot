@@ -10,8 +10,9 @@
 
 ## UI Preview
 
-![Chat Widget](public/images/image-2.png)
-![Admin Dashboard](public/images/image-3.png)
+![Chat Widget](https://raw.githubusercontent.com/Connectgauravkaushik/Veterinary-Chatbot/main/public/images/image-2.png)
+![Admin Dashboard](https://raw.githubusercontent.com/Connectgauravkaushik/Veterinary-Chatbot/main/public/images/image-3.png)
+
 
 
 ## Setup Instructions
