@@ -2,11 +2,10 @@
 
 ## Live Demo
 
-#### Main App (Chat Widget):
-
+#### Main App (Chat Widget): 
 [https://veterinary-chatbot.netlify.app/](https://veterinary-chatbot.netlify.app/)
 
- 
+ #### (Admin): 
 [https://veterinary-chatbot.netlify.app/admin](https://veterinary-chatbot.netlify.app/admin) 
 
 ## Setup Instructions
