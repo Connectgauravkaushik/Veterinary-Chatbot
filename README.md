@@ -1,5 +1,17 @@
 # Veterinary Chatbot SDK
 
+## Live Demo
+
+### Main App (Chat Widget):
+``` bash 
+https://veterinary-chatbot.netlify.app/
+```
+
+### Admin Dashboard:
+```bash 
+https://veterinary-chatbot.netlify.app/admin
+``` 
+
 ## Setup Instructions
 
 ### 1. Prerequisites

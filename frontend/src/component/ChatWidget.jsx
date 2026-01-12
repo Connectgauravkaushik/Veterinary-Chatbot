@@ -20,6 +20,8 @@ export default function VetChatWidget() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [state.messages, state.loading]);
 
+  
+
   return (
     <>
       <Toaster position="top-center" />

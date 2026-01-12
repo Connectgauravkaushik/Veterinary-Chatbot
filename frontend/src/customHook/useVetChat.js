@@ -33,7 +33,6 @@ export const useVetChat = () => {
         }
       })
       .catch(() => {
-        // silent fail for history
       })
       .finally(() => setHistoryLoading(false));
   }, [isOpen, sessionId]);
