@@ -39,15 +39,7 @@ Frontend: http://localhost:5173
 ```
 ### 6. Architecture Overview
   ```bash Client (Browser)
-   |
-   v
-Frontend (HTML/CSS/JS or React)
-   |
-   v
-Backend (Node.js/Express)
-   |
-   v
-APIs (Gemini) + Database (MongoDB)
+Frontend (HTML/CSS/JS or React) -> Backend (Node.js/Express) -> APIs (Gemini) + Database (MongoDB)
 ```
 
 ### 7. Components
