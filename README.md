@@ -1,4 +1,4 @@
-# Veterinary Chatbot – Technical Skills Overview
+# Veterinary Chatbot SDK
 
 ## Setup Instructions
 
