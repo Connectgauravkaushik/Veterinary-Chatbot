@@ -12,6 +12,12 @@ https://veterinary-chatbot.netlify.app/
 https://veterinary-chatbot.netlify.app/admin
 ``` 
 
+## UI Preview
+
+![Chat Widget](public/images/image-2.png)
+![Admin Dashboard](public/images/image-3.png)
+
+
 ## Setup Instructions
 
 ### 1. Prerequisites

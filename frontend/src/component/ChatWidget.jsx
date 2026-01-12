@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { useVetChat } from "../customHook/useVetChat";
 import {
   X,
   Maximize2,
   Minimize2,
   Send,
-  MessageSquare,
   Stethoscope,
   ShieldCheck,
   Sparkles,
@@ -19,8 +19,6 @@ export default function VetChatWidget() {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [state.messages, state.loading]);
-
-  
 
   return (
     <>
@@ -64,7 +62,16 @@ export default function VetChatWidget() {
             </div>
           </div>
 
+          {/* RIGHT BUTTONS */}
           <div className="flex items-center gap-1">
+            {/* Admin Button */}
+            <Link
+              to="/admin"
+              className="px-3 py-1.5 text-xs font-semibold text-white bg-blue-600 border border-blue-200 rounded-lg hover:bg-blue-400 transition"
+            >
+              Admin
+            </Link>
+
             <button
               onClick={actions.toggleFullscreen}
               className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-slate-800 rounded-lg transition-colors"
@@ -86,20 +93,17 @@ export default function VetChatWidget() {
           </div>
         </header>
 
-        <div className="flex-1 overflow-y-auto px-4 pt-6 pb-4 space-y-6 bg-slate-50 dark:bg-[#0f172a] scroll-smooth">
+        {/* MESSAGES */}
+        <div className="flex-1 overflow-y-auto px-4 pt-6 pb-4 space-y-6 bg-slate-50 dark:bg-[#0f172a]">
           {state.historyLoading && (
-            <div className="flex justify-center py-6">
-              <div className="flex items-center gap-2 text-sm text-slate-400">
-                <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
-                <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
-                <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></span>
-                <span>Loading previous messages...</span>
-              </div>
+            <div className="flex justify-center py-6 text-sm text-slate-400">
+              Loading previous messages...
             </div>
           )}
+
           {state.messages.length === 0 && (
-            <div className="h-full flex flex-col items-center justify-center text-center p-6 animate-fade-in">
-              <div className="w-16 h-16 bg-white dark:bg-slate-800 rounded-2xl shadow-sm flex items-center justify-center mb-4 transform rotate-3">
+            <div className="h-full flex flex-col items-center justify-center text-center p-6">
+              <div className="w-16 h-16 bg-white dark:bg-slate-800 rounded-2xl shadow-sm flex items-center justify-center mb-4">
                 <ShieldCheck size={32} className="text-blue-500" />
               </div>
               <h3 className="text-slate-800 dark:text-white font-bold text-lg">
@@ -115,24 +119,16 @@ export default function VetChatWidget() {
           {state.messages.map((m, i) => (
             <div
               key={i}
-              className={`flex w-full 
-    ${
-      m.role === "user"
-        ? "justify-end"
-        : m.role === "system"
-        ? "justify-center"
-        : "justify-start"
-    }`}
+              className={`flex w-full ${
+                m.role === "user" ? "justify-end" : "justify-start"
+              }`}
             >
               <div
-                className={`max-w-[85%] px-5 py-3.5 text-sm shadow-sm
-      ${
-        m.role === "user"
-          ? "bg-blue-600 text-white rounded-2xl rounded-br-none"
-          : m.role === "system"
-          ? "bg-red-100 text-red-700 border border-red-300 rounded-xl"
-          : "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded-2xl rounded-bl-none"
-      }`}
+                className={`max-w-[85%] px-5 py-3.5 text-sm shadow-sm ${
+                  m.role === "user"
+                    ? "bg-blue-600 text-white rounded-2xl rounded-br-none"
+                    : "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded-2xl rounded-bl-none"
+                }`}
               >
                 {m.text}
               </div>
@@ -144,19 +140,19 @@ export default function VetChatWidget() {
 
         {/* INPUT */}
         <footer className="p-4 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
-          <div className="relative flex items-center shadow-sm rounded-xl bg-slate-100 dark:bg-slate-800 ring-1 ring-transparent focus-within:ring-blue-500/30 focus-within:bg-white dark:focus-within:bg-slate-950 transition-all duration-300">
+          <div className="relative flex items-center shadow-sm rounded-xl bg-slate-100 dark:bg-slate-800">
             <input
               type="text"
               value={state.input}
               onChange={(e) => actions.setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && actions.sendMessage()}
               placeholder="Ask about your pet..."
-              className="w-full bg-transparent text-slate-800 dark:text-slate-200 rounded-xl pl-4 pr-12 py-3.5 text-sm focus:outline-none placeholder:text-slate-400"
+              className="w-full bg-transparent pl-4 pr-12 py-3.5 text-sm focus:outline-none"
             />
             <button
               onClick={actions.sendMessage}
               disabled={!state.input.trim() || state.loading}
-              className="absolute right-2 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg disabled:opacity-50 disabled:scale-90 disabled:bg-slate-400 transition-all duration-200 shadow-sm"
+              className="absolute right-2 p-2 bg-blue-600 text-white rounded-lg disabled:opacity-50"
             >
               <Send size={16} />
             </button>
@@ -164,22 +160,14 @@ export default function VetChatWidget() {
         </footer>
       </div>
 
-      {/* FLOATING TRIGGER BUTTON */}
+      {/* FLOATING BUTTON */}
       <button
         onClick={actions.toggleOpen}
-        aria-label="Open Chat"
-        className={`
-          fixed bottom-6 right-6 z-[9990] w-16 h-16 rounded-full bg-blue-600 text-white shadow-xl shadow-blue-600/30
-          flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]
-          hover:scale-110 active:scale-95
-          ${
-            state.isOpen
-              ? "scale-0 opacity-0 rotate-90"
-              : "scale-100 opacity-100 rotate-0"
-          }
-        `}
+        className={`fixed bottom-6 right-6 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center ${
+          state.isOpen ? "scale-0" : "scale-100"
+        }`}
       >
-        <Stethoscope size={28} strokeWidth={2.5} />
+        <Stethoscope size={28} />
       </button>
     </>
   );
