@@ -1,7 +1,7 @@
 const API_BASE = "https://veterinary-chatbot-backend.onrender.com/api";
 
 export async function sendChat(payload) {
-  const res = await fetch("/chat/message", {
+  const res = await fetch(`${API_BASE}/chat/message`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
