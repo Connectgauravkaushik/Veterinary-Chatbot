@@ -64,10 +64,9 @@ export default function VetChatWidget() {
 
           {/* RIGHT BUTTONS */}
           <div className="flex items-center gap-1">
-            {/* Admin Button */}
             <Link
               to="/admin"
-              className="px-3 py-1.5 text-xs font-semibold text-white bg-blue-600 border border-blue-200 rounded-lg hover:bg-blue-400 transition"
+              className="px-3 py-1.5 text-xs font-semibold text-white bg-blue-600 border border-blue-200 rounded-lg hover:bg-blue-500 transition"
             >
               Admin
             </Link>
@@ -94,7 +93,7 @@ export default function VetChatWidget() {
         </header>
 
         {/* MESSAGES */}
-        <div className="flex-1 overflow-y-auto px-4 pt-6 pb-4 space-y-6 bg-slate-50 dark:bg-[#0f172a]">
+        <div className="flex-1 min-h-0 overflow-y-auto px-4 pt-6 pb-4 space-y-6 bg-slate-50 dark:bg-[#0f172a]">
           {state.historyLoading && (
             <div className="flex justify-center py-6 text-sm text-slate-400">
               Loading previous messages...
@@ -139,7 +138,7 @@ export default function VetChatWidget() {
         </div>
 
         {/* INPUT */}
-        <footer className="p-4 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+        <footer className="p-4 flex-shrink-0 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
           <div className="relative flex items-center shadow-sm rounded-xl bg-slate-100 dark:bg-slate-800">
             <input
               type="text"
@@ -147,12 +146,12 @@ export default function VetChatWidget() {
               onChange={(e) => actions.setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && actions.sendMessage()}
               placeholder="Ask about your pet..."
-              className="w-full bg-transparent pl-4 pr-12 py-3.5 text-sm focus:outline-none"
+              className="w-full bg-transparent text-slate-800 dark:text-slate-200 pl-4 pr-12 py-3.5 text-sm focus:outline-none"
             />
             <button
               onClick={actions.sendMessage}
               disabled={!state.input.trim() || state.loading}
-              className="absolute right-2 p-2 bg-blue-600 text-white rounded-lg disabled:opacity-50"
+              className="absolute right-2 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg disabled:opacity-50"
             >
               <Send size={16} />
             </button>
@@ -163,8 +162,8 @@ export default function VetChatWidget() {
       {/* FLOATING BUTTON */}
       <button
         onClick={actions.toggleOpen}
-        className={`fixed bottom-6 right-6 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center ${
-          state.isOpen ? "scale-0" : "scale-100"
+        className={`fixed bottom-6 right-6 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center transition ${
+          state.isOpen ? "scale-0 opacity-0" : "scale-100 opacity-100"
         }`}
       >
         <Stethoscope size={28} />
