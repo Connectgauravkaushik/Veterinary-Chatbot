@@ -3,14 +3,11 @@
 ## Live Demo
 
 #### Main App (Chat Widget):
-``` bash 
-[Text to show](https://veterinary-chatbot.netlify.app/)
-```
 
-#### Admin Dashboard:
-```bash 
-[Text to show](https://veterinary-chatbot.netlify.app/admin)
-``` 
+[Text to show](https://veterinary-chatbot.netlify.app/)
+
+ 
+[Text to show](https://veterinary-chatbot.netlify.app/admin) 
 
 ## Setup Instructions
 
