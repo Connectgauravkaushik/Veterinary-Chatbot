@@ -4,10 +4,10 @@
 
 #### Main App (Chat Widget):
 
-[Text to show](https://veterinary-chatbot.netlify.app/)
+[https://veterinary-chatbot.netlify.app/](https://veterinary-chatbot.netlify.app/)
 
  
-[Text to show](https://veterinary-chatbot.netlify.app/admin) 
+[https://veterinary-chatbot.netlify.app/admin](https://veterinary-chatbot.netlify.app/admin) 
 
 ## Setup Instructions
 
