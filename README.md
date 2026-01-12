@@ -9,9 +9,9 @@
 [https://veterinary-chatbot.netlify.app/admin](https://veterinary-chatbot.netlify.app/admin) 
 
 ## UI Preview
-
-![Chat Widget](public/images/image-2.png)
-![Admin Dashboard](public/images/image-3.png)
+![System Design ](./frontend/public/images/image-1.png)
+![Chat Widget](./frontend/public/images/image-2.png)
+![Admin Dashboard](./frontend/public/images/image-2.png)
 
 
 ## Setup Instructions
