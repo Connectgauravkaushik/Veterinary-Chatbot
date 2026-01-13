@@ -11,7 +11,7 @@
 ## UI Preview
 ![System Design ](./frontend/public/images/image-1.png)
 ![Chat Widget](./frontend/public/images/image-2.png)
-![Admin Dashboard](./frontend/public/images/image-2.png)
+![Admin Dashboard](./frontend/public/images/image-3.png)
 
 
 ## Setup Instructions
