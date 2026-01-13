@@ -8,6 +8,10 @@
  #### (Admin): 
 [https://veterinary-chatbot.netlify.app/admin](https://veterinary-chatbot.netlify.app/admin) 
 
+### Chatbot SDK (Script-Based Integration):
+<script src="[https://your-domain.com/chatbot.js](https://veterinary-chatbot.netlify.app/)"></script>
+
+
 ## UI Preview
 ![System Design ](./frontend/public/images/image-1.png)
 ![Chat widget](./frontend/public/images/image-3.png)
