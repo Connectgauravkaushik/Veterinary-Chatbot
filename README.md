@@ -9,7 +9,7 @@
 [https://veterinary-chatbot.netlify.app/admin](https://veterinary-chatbot.netlify.app/admin) 
 
 ### Chatbot SDK (Script-Based Integration):
-<script src="[https://your-domain.com/chatbot.js](https://veterinary-chatbot.netlify.app/)"></script>
+<script src="https://veterinary-chatbot.netlify.app/chatbot.js"></script>
 
 
 ## UI Preview
