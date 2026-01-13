@@ -44,6 +44,7 @@ npm install
 
 ### 4. Environment Configuration
 ```bash
+MONGO_URI=monogo_Uri_here
 API_KEY=your_api_key_here
 PORT=5000
 ```
