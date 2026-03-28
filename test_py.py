@@ -1,27 +1,36 @@
-def binary_search(arr, target):
-    low = 0
-    high = len(arr) - 1
 
-    while low <= high:
-        mid = (low + high) // 2
-        mid_val = arr[mid]
+def binary_search(arr, low, high, x):
 
-        if mid_val == target:
+    # Recursive function to search
+    if high >= low:
+
+        mid = (high + low) // 2
+
+        # If element is present at the middle itself
+        if arr[mid] == x:
             return mid
-        elif mid_val < target:
-            low = mid + 1
+
+        # If element is smaller than mid, then it can only
+        # be present in left subarray
+        elif arr[mid] > x:
+            return binary_search(arr, low, mid - 1, x)
+
+        # Else the element can only be present in right subarray
         else:
-            high = mid - 1
+            return binary_search(arr, mid + 1, high, x)
 
-    return -1
+    else:
+        # Element is not present in the array
+        return -1
 
-# Example usage:
-my_list = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
-search_value = 11
+# Driver code
+arr = [ 2, 3, 4, 10, 40 ]
+x = 10
 
-index = binary_search(my_list, search_value)
+# Find index
+result = binary_search(arr, 0, len(arr)-1, x)
 
-if index != -1:
-    print(f"Element {search_value} found at index {index}")
+if result != -1:
+    print (f"Element is present at index {result}")
 else:
-    print(f"Element {search_value} not found in the list")
+    print ("Element is not present in array")
